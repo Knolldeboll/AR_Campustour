@@ -5,9 +5,10 @@ using UnityEngine;
 public class Controller : MonoBehaviour
 {
     // Start is called before the first frame update
-    Animator anim;
+    
     public GameObject box;
     public GameObject lever;
+    public GameObject plant;
     void Start()
     {
         // anim = GetComponent<Animator>();
@@ -23,7 +24,7 @@ public class Controller : MonoBehaviour
 
 
         Animator ani = lever.GetComponent<Animator>();
-
+        Animator plantimator = plant.GetComponent<Animator>();
 
         if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
         {
@@ -39,10 +40,12 @@ public class Controller : MonoBehaviour
             if(hit.collider != null)
             {
             //    box.GetComponent<MeshRenderer>().material.color = Color.blue; - Lief das ?!?
+
             bool state = !ani.GetBool("isLeverUp");
             // If true, show something fancy!
             ani.SetBool("isLeverUp", state);
-                
+            plantimator.SetBool("Grow",state);
+
             }
         }
     }
