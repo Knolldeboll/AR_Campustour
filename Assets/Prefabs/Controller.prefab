@@ -47,3 +47,4 @@ MonoBehaviour:
   box: {fileID: 0}
   lever: {fileID: 0}
   plant: {fileID: 0}
+  hitMarker: {fileID: 0}

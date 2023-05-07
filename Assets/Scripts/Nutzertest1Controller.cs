@@ -9,11 +9,13 @@ public class Nutzertest1Controller : MonoBehaviour
   //  public GameObject box;
     public GameObject lever;
     public GameObject image;
-//    public GameObject plant;
+    public GameObject hitMarker;
+    Animator uimator;
+    //    public GameObject plant;
     void Start()
     {
         // anim = GetComponent<Animator>();
-
+        uimator = hitMarker.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -30,12 +32,12 @@ public class Nutzertest1Controller : MonoBehaviour
         if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
         {
 
-        
+
 
             // Hmmmm... https://stackoverflow.com/questions/24110254/problems-with-raycast-for-arcamera-in-unity3d-with-vuforia-sdk?
 
-            
-            Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+            Vector2 touchpos = Input.GetTouch(0).position;
+            Ray ray = Camera.main.ScreenPointToRay(touchpos);
             RaycastHit hit;
             Physics.Raycast(ray, out hit);
             if(hit.collider != null)
@@ -43,9 +45,10 @@ public class Nutzertest1Controller : MonoBehaviour
                 //    box.GetComponent<MeshRenderer>().material.color = Color.blue; - Lief das ?!?
 
              image.SetActive(true);
+                hitMarker.transform.position = new Vector3(touchpos.x, touchpos.y, 0f);
+                uimator.SetTrigger("targetHit");
 
-
-            bool state = !ani.GetBool("isLeverUp");
+                bool state = !ani.GetBool("isLeverUp");
             // If true, show something fancy!
             ani.SetBool("isLeverUp", state);
          //   plantimator.SetBool("Grow",state);
