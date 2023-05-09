@@ -10,6 +10,8 @@ public class Nutzertest1Controller : MonoBehaviour
     public GameObject lever;
     public GameObject image;
     public GameObject hitMarker;
+    public GameObject arrow;
+
     Animator uimator;
     //    public GameObject plant;
     void Start()
@@ -44,13 +46,16 @@ public class Nutzertest1Controller : MonoBehaviour
             {
                 //    box.GetComponent<MeshRenderer>().material.color = Color.blue; - Lief das ?!?
 
-             image.SetActive(true);
+                //image.SetActive(state);
                 hitMarker.transform.position = new Vector3(touchpos.x, touchpos.y, 0f);
                 uimator.SetTrigger("targetHit");
+                
 
                 bool state = !ani.GetBool("isLeverUp");
-            // If true, show something fancy!
-            ani.SetBool("isLeverUp", state);
+                image.SetActive(state);
+                arrow.SetActive(state);
+                // If true, show something fancy!
+                ani.SetBool("isLeverUp", state);
          //   plantimator.SetBool("Grow",state);
 
             }
