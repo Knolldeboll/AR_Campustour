@@ -6,7 +6,7 @@ public class GameManager
 {
 
 
-    public List<GameObject> targets;
+    public List<GameObject> targets = new List<GameObject>();
     // Start is called before the first frame update
     private static GameManager instance;
     public static GameManager Instance()
@@ -28,6 +28,7 @@ public class GameManager
     {
 
         targets.Add(targetVisuals);
+        // Maybe deactivate target visuals at register ?
 
     }
 
@@ -49,5 +50,20 @@ public class GameManager
 
     }
 
+    public string targetsToText()
+    {
 
+        string ret = " ";
+
+        if (targets == null || targets.Count == 0) return ret;
+        foreach (var item in targets)
+        {
+            ret += item.name + "isActive: " + item.activeSelf + ",  ";
+
+
+
+        }
+        return ret;
+
+    }
 }
