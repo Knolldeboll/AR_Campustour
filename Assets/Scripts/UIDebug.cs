@@ -17,12 +17,12 @@ public class UIDebug : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.SetText(GameManager.Instance().targetsToText());
+       // text.SetText(GameManager.Instance().targetsToText());
     }
 
    public void showDebugText(string msg)
     {
-      //  text.SetText(msg);
+        text.SetText(msg);
     }
 
 }
