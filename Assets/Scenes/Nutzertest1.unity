@@ -128,6 +128,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7709461098464640736, guid: 7cb444df5872d854b87a17bc26cbf332, type: 3}
@@ -227,6 +228,10 @@ PrefabInstance:
       value: -3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7709461098464640748, guid: 7cb444df5872d854b87a17bc26cbf332, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1181935103}
   m_SourcePrefab: {fileID: 100100000, guid: 7cb444df5872d854b87a17bc26cbf332, type: 3}
 --- !u!1 &91243365 stripped
 GameObject:
@@ -243,6 +248,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8404147921129837064, guid: cb3493c45c183004bb6c9dfcd5792858, type: 3}
@@ -303,6 +309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8404147921129837066, guid: cb3493c45c183004bb6c9dfcd5792858, type: 3}
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: cb3493c45c183004bb6c9dfcd5792858, type: 3}
 --- !u!1 &360434926 stripped
 GameObject:
@@ -595,7 +602,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -1036,7 +1042,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1733583283}
   m_Father: {fileID: 1696009150}
@@ -1145,9 +1151,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'poopasaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-
-'
+  m_text: tesssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssst
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1645,6 +1649,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 650478211}
     m_Modifications:
     - target: {fileID: 9104552102423859525, guid: d078abf55ce67be469e19779e86cdc82, type: 3}
@@ -1716,6 +1721,7 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: d078abf55ce67be469e19779e86cdc82, type: 3}
 --- !u!1 &1688735616 stripped
 GameObject:
@@ -1818,14 +1824,14 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: NT2
+  mTrackableName: Rayder
   mInitializedInEditor: 1
   mDataSetPath: 
-  mAspectRatio: 1.4238646
+  mAspectRatio: 1.4993709
   mImageTargetType: 3
-  mWidth: 1.85
-  mHeight: 2.6341496
-  mRuntimeTexture: {fileID: 2800000, guid: 573097c3805402944970f7ebfec5ee90, type: 3}
+  mWidth: 0.38682887
+  mHeight: 0.58
+  mRuntimeTexture: {fileID: 2800000, guid: 38178c08420ac764390b1c2dffa6bad5, type: 3}
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
@@ -1838,7 +1844,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1696009146}
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 15.92, y: 0.35, z: -12.31}
+  m_LocalPosition: {x: 2.47, y: 1.492, z: -6.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1858,7 +1864,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b297327e4b1e845882dab4bda68bec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uidebugger: {fileID: 0}
   visuals: {fileID: 1010392416}
+  name: 
 --- !u!114 &1696009152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1873,7 +1881,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 1696009149}
   mHiddenRoot: {fileID: 0}
-  mTargetName: NT2
+  mTargetName: Rayder
   mDatasetName: 
   mCastedBehaviour: {fileID: 1696009149}
   mMeshFilter: {fileID: 0}
@@ -1905,9 +1913,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1733583282}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.614, y: 1.02, z: -0.84}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 1.5, y: -0.2, z: -0.46}
+  m_LocalScale: {x: 0.41, y: 0.41, z: 0.41}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1010392417}
   m_RootOrder: 0
@@ -2050,7 +2058,19 @@ MonoBehaviour:
         m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1814675276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2106,7 +2126,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b297327e4b1e845882dab4bda68bec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uidebugger: {fileID: 0}
   visuals: {fileID: 650478210}
+  name: 
 --- !u!114 &1814675279
 MonoBehaviour:
   m_ObjectHideFlags: 0

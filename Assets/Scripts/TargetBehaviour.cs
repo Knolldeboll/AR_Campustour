@@ -25,7 +25,7 @@ public class TargetBehaviour : MonoBehaviour
     public void activate()
     {
        // p.showDebugText(name + " activated!"  );
-
+       
         visuals.SetActive(true);
         GameManager.Instance().disableOtherTargetVisuals(visuals);
     }
