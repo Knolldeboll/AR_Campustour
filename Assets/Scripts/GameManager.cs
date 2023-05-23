@@ -12,7 +12,7 @@ public class GameManager
     private static GameManager instance;
 
     // The currentLevel
-    private int currentLevel = 1;
+    private int currentLevel = 0;
     private int levelCount = 3;
 
 
