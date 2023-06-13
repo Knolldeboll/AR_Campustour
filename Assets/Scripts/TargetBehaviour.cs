@@ -5,7 +5,7 @@ using UnityEngine;
 public class TargetBehaviour : MonoBehaviour
 {
     public GameObject uidebugger;
-    private UIDebug p;
+    //private UIp;
     public GameObject visuals;
     public string name;
     // Start is called before the first frame update
@@ -13,7 +13,7 @@ public class TargetBehaviour : MonoBehaviour
     {
 
         GameManager.Instance().registerTargetVisuals(visuals);
-        p = uidebugger.GetComponent<UIDebug>();
+       // p = uidebugger.GetComponent<UIDebug>();
     }
 
     // Update is called once per frame

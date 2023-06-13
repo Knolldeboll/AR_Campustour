@@ -5,7 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class GameManager
 {
-
+    // TODO: Genereller Aufbau der Anwendung.
+    // Generelle scene: bei Bewegung zwischen den Leveln, enthält alle main-Targets der Level!
+    // Level-Scenes: Bei Scannen des jeweiligen main-Targets wird die entsprechende Levelscene geladen und der Level-Controller gestartet (passiert durch Laden der Scene, muss in der Hierarchie drin sein)
+    // Bei abschluss des levels: nextLevel() und Rückkehr in die Generelle Scene
+    // Maybe disablen des main-targets der abgeschlossenen Scene, oder der inaktiven scenes!
 
     public List<GameObject> targets = new List<GameObject>();
     // Start is called before the first frame update
@@ -30,7 +34,7 @@ public class GameManager
     }
 
 
-
+    // TODO: Separate this into the corresponding level controllers
 
     public void registerTargetVisuals(GameObject targetVisuals)
     {
@@ -60,7 +64,7 @@ public class GameManager
     public void nextLevel()
     {
         // 
-
+        
         
         currentLevel++;
 

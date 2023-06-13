@@ -8,8 +8,11 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Nutzertest1.unity
     guid: 8fafd619925fb424ab3370854cc417eb
+  - enabled: 1
+    path: Assets/Scenes/Fairbeet.unity
+    guid: 5ceb4a42f10ff8944b18464478a83807
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 55ea2c6be9be8454a845f24ac6b5a86d, type: 2}
