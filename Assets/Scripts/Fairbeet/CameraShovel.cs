@@ -21,6 +21,6 @@ public class CameraShovel : MonoBehaviour
     }
     public void dig()
     {
-        anim.Play("Dig", -1, 0f);
+        anim.Play("spaten", -1, 0f);
     }
 }

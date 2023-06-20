@@ -11,6 +11,7 @@ public class FairbeetController : ILevelController
     //    Schaufel aufsammeln -> interact > nextState - DONE 
     // 2. Anzeige "Unkraut jäten" - TODO
     //    Unkraut jäten, bis alle weg ->interact - DONE
+
     // 3. Blume geht auf, iwas interessantes drin - TODO
     //    -> interact > nextState=exitState  - TODO
 
@@ -24,7 +25,7 @@ public class FairbeetController : ILevelController
     public int state = 1;
     public int exitState = 3;
     public int weedCount = 5;
-    public bool weedInteraction = false;
+    public bool weedInteraction =  false;
 
     private static FairbeetController instance;
 
@@ -47,12 +48,11 @@ public class FairbeetController : ILevelController
         weedInteraction = true;
     }
 
-    // Called in BadplantInteraction
+    // Called in Schaufel
 
     public void shovelPickup()
     {
         activateWeedInteraction();
-
 
     }
 

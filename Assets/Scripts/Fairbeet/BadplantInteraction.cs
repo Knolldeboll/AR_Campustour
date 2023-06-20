@@ -26,7 +26,7 @@ public class BadplantInteraction : MonoBehaviour, IInteractable
 
     public void interact()
     {
-        if (!fbcontroller.weedInteraction) return;
+     //  if (!fbcontroller.weedInteraction) return;
 
         camshov.dig();
         fbcontroller.decreaseWeed();

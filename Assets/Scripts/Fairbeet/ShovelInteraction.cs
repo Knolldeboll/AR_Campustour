@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ShovelInteraction : MonoBehaviour, IInteractable
 {
+    GameObject CameraShovel;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,7 @@ public class ShovelInteraction : MonoBehaviour, IInteractable
 
     public void interact(){
 
+        CameraShovel.SetActive(true);
     }
 
 }

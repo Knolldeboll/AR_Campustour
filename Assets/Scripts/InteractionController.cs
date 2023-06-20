@@ -35,9 +35,6 @@ public class InteractionController : MonoBehaviour
         // Wenn min. ein Touch ist und der erste davon gerade anfängt
         if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
         {
-
-            
-
             // Hmmmm... https://stackoverflow.com/questions/24110254/problems-with-raycast-for-arcamera-in-unity3d-with-vuforia-sdk?
             Vector2 touchpos = Input.GetTouch(0).position;
             Ray ray = Camera.main.ScreenPointToRay(touchpos);
@@ -52,7 +49,6 @@ public class InteractionController : MonoBehaviour
                 uimator.SetTrigger("targetHit");
                 GameObject hitObject =   hit.transform.gameObject;
                 IInteractable interactable;
-               
 
                 // IF component could be received
                 if (hitObject.TryGetComponent<IInteractable>(out interactable))
