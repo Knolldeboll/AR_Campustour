@@ -7,12 +7,12 @@ public class FairbeetController : ILevelController
     // Intended for level-specific state management and interactions
 
     //Ablauf des Levels in States:
-    // 1. Anzeige "Schaufel aufsammeln"
-    //    Schaufel aufsammeln -> interact > nextState
-    // 2. Anzeige "Unkraut jäten"
-    //    Unkraut jäten, bis alle weg ->interact 
-    // 3. Blume geht auf, iwas interessantes drin
-    //    -> interact > nextState=exitState 
+    // 1. Anzeige "Schaufel aufsammeln" - TODO
+    //    Schaufel aufsammeln -> interact > nextState - DONE 
+    // 2. Anzeige "Unkraut jäten" - TODO
+    //    Unkraut jäten, bis alle weg ->interact - DONE
+    // 3. Blume geht auf, iwas interessantes drin - TODO
+    //    -> interact > nextState=exitState  - TODO
 
 
     // Start is called before the first frame update
@@ -24,7 +24,7 @@ public class FairbeetController : ILevelController
     public int state = 1;
     public int exitState = 3;
     public int weedCount = 5;
-    public bool weedIntreraction = false;
+    public bool weedInteraction = false;
 
     private static FairbeetController instance;
 
@@ -39,21 +39,31 @@ public class FairbeetController : ILevelController
 
     public void intiateScene()
     {
-        // Muss hier was rein ?
+        // Muss hier was rein ? 
     }
 
     public void activateWeedInteraction()
     {
-        weedIntreraction = true;
+        weedInteraction = true;
     }
 
     // Called in BadplantInteraction
+
+    public void shovelPickup()
+    {
+        activateWeedInteraction();
+
+
+    }
+
     public void decreaseWeed()
     {
+        // Wird nur bei Badplant.interact aufgerufen!
         weedCount--;
         if(weedCount == 0)
         {
-            // 
+            // End! Show something
+            // nextstate quasi
         }
     }
 
