@@ -24,7 +24,7 @@ public class FairbeetController : ILevelController
 
     public int state = 1;
     public int exitState = 3;
-    public int weedCount = 5;
+    public int weedCount = 0;
     public bool weedInteraction =  false;
 
     private static FairbeetController instance;

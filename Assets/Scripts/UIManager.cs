@@ -11,16 +11,17 @@ public class UIManager : MonoBehaviour
     // public GameObject mapImage;
     public List<GameObject> mapMarkers;
     public GameObject debugtext;
-    public GameObject info;
-    private TMP_Text infotext;
-    private TMP_Text text;
+    public GameObject infofield;
+    public GameObject infotext;
+    private TMP_Text tmp_info;
+    private TMP_Text tmp_debug;
 
     // Start is called before the first frame update
     void Start()
     {
         updateMap();
-        text = debugtext.GetComponent<TMP_Text>();
-        infotext = info.GetComponent<TMP_Text>();
+        tmp_debug = debugtext.GetComponent<TMP_Text>();
+        tmp_info = infotext.GetComponent<TMP_Text>();
 
 
     }
@@ -54,19 +55,22 @@ public class UIManager : MonoBehaviour
 
    public void setDebugText(string debugtext)
     {
-        text.SetText(debugtext);
+       tmp_debug.SetText(debugtext);
 
     }
 
+    /*
+     * Issue an information text
+     */
     public void setInfoText(string text)
     {
-
-        infotext.SetText(text);
+        infofield.SetActive(true);
+        tmp_info.SetText(text);
     }
 
     public void disableInfo()
     {
-        info.SetActive(false);
+        infofield.SetActive(false);
     }
 
     // Update is called once per frame

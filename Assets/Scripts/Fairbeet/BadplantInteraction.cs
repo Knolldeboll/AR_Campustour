@@ -7,6 +7,8 @@ public class BadplantInteraction : MonoBehaviour, IInteractable
 
     public GameObject levelController;
     public GameObject cameraShovel;
+    public GameObject UI;
+    private UIManager uimanager;
     private CameraShovel camshov;
     private FairbeetController fbcontroller;
 
@@ -14,8 +16,9 @@ public class BadplantInteraction : MonoBehaviour, IInteractable
     void Start()
     {
         fbcontroller = FairbeetController.Instance();
-        // Geht das ? sollte gehen
+        fbcontroller.weedCount += 1;
         camshov = cameraShovel.GetComponent<CameraShovel>();
+        uimanager = UI.GetComponent<UIManager>();
     }
 
     // Update is called once per frame
@@ -26,10 +29,11 @@ public class BadplantInteraction : MonoBehaviour, IInteractable
 
     public void interact()
     {
-     //  if (!fbcontroller.weedInteraction) return;
+       if (!fbcontroller.weedInteraction) return;
 
         camshov.dig();
         fbcontroller.decreaseWeed();
+        uimanager.setInfoText("Noch übrig: " + FairbeetController.Instance().weedCount);
         // TODO: animation zum verschwinden 
         //Testweise erstmal disablen
         gameObject.SetActive(false);
