@@ -9,11 +9,12 @@ public class MapButton : MonoBehaviour
     public GameObject map;
     public Sprite world;
     public Sprite x;
-    
+    public Button button;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        button.onClick.AddListener(toggleMap);
     }
 
     // Update is called once per frame
@@ -22,8 +23,10 @@ public class MapButton : MonoBehaviour
         
     }
 
+
     public void toggleMap()
     {
+        Debug.Log("Mapbutton");
         map.SetActive(!map.activeSelf);
         if (map.activeSelf)
         {

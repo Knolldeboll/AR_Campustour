@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SchaufelInteraction : MonoBehaviour, IInteractable
+public class FlowerInteraction : MonoBehaviour, IInteractable
 {
-    public GameObject cameraSchaufel;
-    public GameObject levelController;
     public GameObject UI;
-    private UIManager uimanager;
     //private FairbeetController fbcontroller;
+    private UIManager uimanager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,16 +18,12 @@ public class SchaufelInteraction : MonoBehaviour, IInteractable
     // Update is called once per frame
     void Update()
     {
-        
-    }
 
+    }
 
     public void interact()
     {
-        // TODO: alle unkrauts werden interagierbar, fb activateweeds
-        cameraSchaufel.SetActive(true);
-        //uimanager.disableInfo();
-        FairbeetController.Instance().shovelPickup();
-        Destroy(this.gameObject);
+        uimanager.setInfoText("You made it!");
+        FairbeetController.Instance().nextState();
     }
 }

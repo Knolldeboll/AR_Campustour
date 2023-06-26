@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class FairbeetController : ILevelController
+public class FairbeetController :  ILevelController
 {
+
+    // TODO: Maybe transform into MonoBehavoiur, so that (for example) UI and other GameObjects from the scene can directly be accessed
 
     // Intended for level-specific state management and interactions
 
     //Ablauf des Levels in States:
-    // 1. Anzeige "Schaufel aufsammeln" - TODO
+    // 1. Anzeige "Schaufel aufsammeln" - Done
     //    Schaufel aufsammeln -> interact > nextState - DONE 
-    // 2. Anzeige "Unkraut jäten" - TODO
+    // 2. Anzeige "Unkraut jäten" - Done
     //    Unkraut jäten, bis alle weg ->interact - DONE
 
     // 3. Blume geht auf, iwas interessantes drin - TODO
@@ -36,6 +38,7 @@ public class FairbeetController : ILevelController
             instance = new FairbeetController();
         }
         return instance;
+        //return this;
     }
 
     public void intiateScene()
@@ -53,7 +56,8 @@ public class FairbeetController : ILevelController
     public void shovelPickup()
     {
         activateWeedInteraction();
-
+        nextState();
+        //state = 2
     }
 
     public void decreaseWeed()
@@ -62,8 +66,9 @@ public class FairbeetController : ILevelController
         weedCount--;
         if(weedCount == 0)
         {
-            // End! Show something
-            // nextstate quasi
+            
+            nextState();
+            // state = 3
         }
     }
 
@@ -72,7 +77,7 @@ public class FairbeetController : ILevelController
     {
         state++;
 
-        if(state == 3)
+        if(state == 4)
         {
             GameManager.Instance().nextLevel();
             // TODO: load general scene

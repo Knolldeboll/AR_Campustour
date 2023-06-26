@@ -69,6 +69,9 @@ public class InteractionController : MonoBehaviour
                 GameObject hitObject = hitInfo.collider.gameObject;
                 if(hitObject != null)
                 {
+
+                    hitMarker.transform.position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f);
+                    uimator.SetTrigger("targetHit");
                     IInteractable inter;
                     if(hitObject.TryGetComponent<IInteractable>(out inter))
                     {

@@ -80,22 +80,16 @@ public class GameManager
         {
             case 1:
                 // Do nothing?
-
-
                 break;
             case 2:
-
                // SceneManager.LoadScene("Level2");
-
                 // Load scene, etc.  -> geht hier (no monobehaviour!) loadscene ? 
                 // oder soll auf currrentlevel ein extra manager zugreifen, der dann die neuen scenes lädt,
                 // Map updates in eigenem mapmanager, der currentlevel abcheckt ? 
 
                 // Maybe reset current Targets, so that the targets from the old level are not known here
                 break;
-
         }
-
     }
 
 
