@@ -60,7 +60,8 @@ public class InteractionController : MonoBehaviour
                 }
                
             }
-        }else if (Input.GetMouseButtonDown(0))
+        }
+        /*else if (Input.GetMouseButtonDown(0))
         {
            // Mouse clicking for debug purposes
             Ray ray = camera.ScreenPointToRay(Input.mousePosition);
@@ -80,6 +81,6 @@ public class InteractionController : MonoBehaviour
                     }
                 }
             }
-        }
+        }*/
     }
 }

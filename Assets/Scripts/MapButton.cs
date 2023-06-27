@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class MapButton : MonoBehaviour
+public class MapButton : MonoBehaviour  //, IPointerDownHandler
 {
 
     public GameObject map;
@@ -14,7 +15,7 @@ public class MapButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        button.onClick.AddListener(toggleMap);
+       button.onClick.AddListener(toggleMap);
     }
 
     // Update is called once per frame
@@ -38,5 +39,10 @@ public class MapButton : MonoBehaviour
         }
 
     }
-
+/*
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        toggleMap(); //throw new System.NotImplementedException();
+    }
+*/
 }
