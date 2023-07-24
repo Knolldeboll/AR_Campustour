@@ -8,11 +8,13 @@ public class GameManager
     // TODO: Genereller Aufbau der Anwendung.
     // Generelle scene: bei Bewegung zwischen den Leveln, enthält alle main-Targets der Level!
 
-    // Level-Scenes: Bei Scannen des jeweiligen main-Targets wird die entsprechende Levelscene geladen und der Level-Controller gestartet (passiert durch Laden der Scene, muss in der Hierarchie drin sein)
+    // Level-Scenes: Bei Scannen des jeweiligen main-Targets wird die entsprechende Levelscene geladen und der Level-Controller gestartet
+    // (passiert durch Laden der Scene, muss in der Hierarchie drin sein)
     
     // Bei abschluss des levels: nextLevel() und Rückkehr in die Generelle Scene
     
     // Maybe disablen des main-targets der abgeschlossenen Scene, oder der inaktiven scenes!
+    // -> Der Controller der generalscene kann ja anhand des currentLevels nur bestimmte targets zulassen 
 
     public List<GameObject> targets = new List<GameObject>();
     // Start is called before the first frame update
