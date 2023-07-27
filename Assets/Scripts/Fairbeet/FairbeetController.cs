@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 public class FairbeetController :  ILevelController
 {
 
@@ -28,7 +29,6 @@ public class FairbeetController :  ILevelController
     public int exitState = 3;
     public int weedCount = 0;
     public bool weedInteraction =  false;
-
     private static FairbeetController instance;
 
     public static FairbeetController Instance()
@@ -79,8 +79,10 @@ public class FairbeetController :  ILevelController
 
         if(state == 4)
         {
+            //TODO: Maybe load scene in GameManager, avoiding dupicates
+            SceneManager.LoadScene("General");
             GameManager.Instance().nextLevel();
-            // TODO: load general scene
+
         }
     }
 }

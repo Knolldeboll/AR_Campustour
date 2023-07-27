@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class GeneralSceneController : MonoBehaviour, ILevelController
 {
     // Start is called before the first frame update
@@ -17,5 +17,20 @@ public class GeneralSceneController : MonoBehaviour, ILevelController
     void Update()
     {
         
+    }
+
+    public void startFairbeet()
+    {
+        SceneManager.LoadScene("Fairbeet");
+    }
+
+    public void startFirstResponders()
+    {
+
+    }
+
+    public void startHome()
+    {
+
     }
 }

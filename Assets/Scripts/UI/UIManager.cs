@@ -14,8 +14,8 @@ public class UIManager : MonoBehaviour
     public GameObject infofield;
     public GameObject infotext;
     public GameObject locationtext;
-   // public Sprite greenMarker;
-  //  public Sprite redMarker;
+    public Sprite greenMarker;
+    public Sprite redMarker;
     private TMP_Text tmp_info;
     private TMP_Text tmp_debug;
     private TMP_Text tmp_location;
@@ -23,16 +23,17 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        updateMap();
+        
         tmp_debug = debugtext.GetComponent<TMP_Text>();
         tmp_info = infotext.GetComponent<TMP_Text>();
         tmp_location = locationtext.GetComponent<TMP_Text>();
+        updateMap();
     }
 
     void updateMap()
     {
 
-        return;
+        //return;
         // Vielleicht reichts auch, wenn beim Szenenwechsel der shit hier neu galden wird, 
         // Die markers entsprechend der aktuellen infos aus gamemanager zu setzen!
         // Add Poopy doodls
@@ -44,17 +45,17 @@ public class UIManager : MonoBehaviour
         for (int i = 0; i < mapMarkers.Count; i++)
         {
 
-            // TODO: Change setting color to setting red or green sprite
+            
             // TODO: Apply text (1,2,3)
             if (i < level)
             {
                 mapMarkers[i].SetActive(true);
-                mapMarkers[i].GetComponent<Image>().color = Color.green;
+                mapMarkers[i].GetComponent<Image>().sprite = greenMarker;
             }
             if (i == level)
             {
                 mapMarkers[i].SetActive(true);
-                mapMarkers[i].GetComponent<Image>().color = Color.red;
+                mapMarkers[i].GetComponent<Image>().sprite = redMarker;
             }
 
         }

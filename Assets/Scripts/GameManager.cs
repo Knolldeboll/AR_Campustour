@@ -20,9 +20,9 @@ public class GameManager
     // Start is called before the first frame update
     private static GameManager instance;
 
-    // The currentLevel
-    private int currentLevel = 2;
-    private int levelCount = 3;
+    // The currentLevel, level starts at 0
+    private int currentLevel = 0;
+    private int levelCount = 2;
 
 
 
