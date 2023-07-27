@@ -21,16 +21,19 @@ public class GeneralSceneController : MonoBehaviour, ILevelController
 
     public void startFairbeet()
     {
+        // If level already finished, skip loading
+        if (GameManager.Instance().getCurrentLevel() != 0 ) return;
         SceneManager.LoadScene("Fairbeet");
+        
     }
 
     public void startFirstResponders()
     {
-
+        if (GameManager.Instance().getCurrentLevel() != 1) return;
     }
 
     public void startHome()
     {
-
+        if (GameManager.Instance().getCurrentLevel() != 2) return;
     }
 }
