@@ -56,7 +56,7 @@ public class InteractionController : MonoBehaviour
                 {
                     ui.setDebugText("Interactable touched!");
                     // Call its interact function
-                    interactable.interact();
+                    interactable.interact(hitObject);
                 }
                
             }

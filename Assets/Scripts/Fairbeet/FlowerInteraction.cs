@@ -21,7 +21,7 @@ public class FlowerInteraction : MonoBehaviour, IInteractable
 
     }
 
-    public void interact()
+    public void interact(GameObject interactor)
     {
         uimanager.setInfoText("You made it!");
         FairbeetController.Instance().nextState();

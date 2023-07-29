@@ -4,11 +4,8 @@ using UnityEngine;
 
 public interface IInteractable 
 {
-
-    public void interact()
+    public void interact(GameObject interactor)
     {
-
-        
 
     }
 

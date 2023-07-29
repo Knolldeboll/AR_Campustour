@@ -23,7 +23,7 @@ public class SchaufelInteraction : MonoBehaviour, IInteractable
     }
 
 
-    public void interact()
+    public void interact(GameObject interactor)
     {
         // TODO: alle unkrauts werden interagierbar, fb activateweeds
         cameraSchaufel.SetActive(true);

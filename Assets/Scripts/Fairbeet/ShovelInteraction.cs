@@ -18,7 +18,8 @@ public class ShovelInteraction : MonoBehaviour, IInteractable
         
     }
 
-    public void interact(){
+    public void interact(GameObject interactor)
+    {
 
         CameraShovel.SetActive(true);
     }

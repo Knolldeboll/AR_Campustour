@@ -1,0 +1,62 @@
+# Blender 3.5.1 MTL File: 'Old Bicycle.blend'
+# www.blender.org
+
+newmtl Chain.001
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Old Bicycle_Chain_BaseColor.png
+map_Ns C:/Old Bicycle_Chain_Roughness.png
+map_refl C:/Old Bicycle_Chain_Metallic.png
+map_Bump -bm 1.000000 C:/Old Bicycle_Chain_Normal.png
+
+newmtl Frame
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Old Bicycle_Frame_BaseColor.png
+map_Ns C:/Old Bicycle_Frame_Roughness.png
+map_refl C:/Old Bicycle_Frame_Metallic.png
+map_Bump -bm 1.000000 C:/Old Bicycle_Frame_Normal.png
+
+newmtl Handlebar
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Old Bicycle_Handlebar_BaseColor.png
+map_Ns C:/Old Bicycle_Handlebar_Roughness.png
+map_refl C:/Old Bicycle_Handlebar_Metallic.png
+map_Bump -bm 1.000000 C:/Old Bicycle_Handlebar_Normal.png
+
+newmtl Pedals_Seat
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Old Bicycle_Pedals_Seat_BaseColor.png
+map_Ns C:/Old Bicycle_Pedals_Seat_Roughness.png
+map_refl C:/Old Bicycle_Pedals_Seat_Metallic.png
+map_Bump -bm 0.800000 C:/Old Bicycle_Pedals_Seat_Normal.png
+
+newmtl Wheel
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Old Bicycle_Wheel_BaseColor.png
+map_Ns C:/Old Bicycle_Wheel_Roughness.png
+map_refl C:/Old Bicycle_Wheel_Metallic.png
+map_Bump -bm 1.000000 C:/Old Bicycle_Wheel_Normal.png

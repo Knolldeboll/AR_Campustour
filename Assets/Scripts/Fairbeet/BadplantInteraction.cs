@@ -28,7 +28,7 @@ public class BadplantInteraction : MonoBehaviour, IInteractable
 
     }
 
-    public void interact()
+    public void interact(GameObject interactor)
     {
         if (!FairbeetController.Instance().weedInteraction) return;
 
