@@ -5,15 +5,15 @@ using UnityEngine;
 public class InteractionController : MonoBehaviour
 {
     // Start is called before the first frame update
-    
-  //  public GameObject box;
-   // public GameObject lever;
-   // public GameObject image;
+
+    //  public GameObject box;
+    // public GameObject lever;
+    // public GameObject image;
     public GameObject hitMarker;
     public GameObject UImanager;
     private UIManager ui;
     public Camera camera;
-   // public GameObject arrow;
+    // public GameObject arrow;
 
     Animator uimator;
     //    public GameObject plant;
@@ -21,13 +21,13 @@ public class InteractionController : MonoBehaviour
     {
         uimator = hitMarker.GetComponent<Animator>();
         ui = UImanager.GetComponent<UIManager>();
-       // debug = UIdebug.GetComponent<UIDebug>();
+        // debug = UIdebug.GetComponent<UIDebug>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        aim();       
+        aim();
     }
 
     void aim()
@@ -48,7 +48,7 @@ public class InteractionController : MonoBehaviour
                 //Show and animate hitmarker
                 hitMarker.transform.position = new Vector3(touchpos.x, touchpos.y, 0f);
                 uimator.SetTrigger("targetHit");
-                GameObject hitObject =   hit.transform.gameObject;
+                GameObject hitObject = hit.transform.gameObject;
                 IInteractable interactable;
 
                 // IF component could be received
@@ -58,29 +58,29 @@ public class InteractionController : MonoBehaviour
                     // Call its interact function
                     interactable.interact(hitObject);
                 }
-               
+
             }
         }
-        /*else if (Input.GetMouseButtonDown(0))
+        else if (Input.GetMouseButtonDown(0))
         {
-           // Mouse clicking for debug purposes
+            // Mouse clicking for debug purposes
             Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-            if(Physics.Raycast(ray, out RaycastHit hitInfo))
+            if (Physics.Raycast(ray, out RaycastHit hitInfo))
             {
                 GameObject hitObject = hitInfo.collider.gameObject;
-                if(hitObject != null)
+                if (hitObject != null)
                 {
 
                     hitMarker.transform.position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f);
                     uimator.SetTrigger("targetHit");
                     IInteractable inter;
-                    if(hitObject.TryGetComponent<IInteractable>(out inter))
+                    if (hitObject.TryGetComponent<IInteractable>(out inter))
                     {
                         ui.setDebugText("Interactabe klicked");
-                        inter.interact();
+                        inter.interact(hitObject);
                     }
                 }
             }
-        }*/
+        }
     }
 }
