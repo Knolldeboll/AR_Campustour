@@ -12,7 +12,7 @@ public class InteractionController : MonoBehaviour
     public GameObject hitMarker;
     public GameObject UImanager;
     private UIManager ui;
-    public Camera camera;
+    public Camera cam;
     // public GameObject arrow;
 
     Animator uimator;
@@ -64,7 +64,7 @@ public class InteractionController : MonoBehaviour
         else if (Input.GetMouseButtonDown(0))
         {
             // Mouse clicking for debug purposes
-            Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hitInfo))
             {
                 GameObject hitObject = hitInfo.collider.gameObject;
