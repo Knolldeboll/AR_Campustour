@@ -13,8 +13,10 @@ public class FRController : MonoBehaviour
     public float maxOverflow = 0.25f;
 
     bool overflow = false;
-
-
+    public GameObject ui;
+    public GameObject hitbox;
+    private Animator hitani;
+    private UIManager uimanager;
     int streak = 0;
     // TODO: Audio source controlling, stying alive
 
@@ -22,6 +24,8 @@ public class FRController : MonoBehaviour
     void Start()
     {
 
+        hitani = hitbox.GetComponent<Animator>();
+        uimanager = ui.GetComponent<UIManager>();
     }
 
     // Update is called once per frame
@@ -31,6 +35,8 @@ public class FRController : MonoBehaviour
         if (timer > pumpPeriod)
         {   
             Debug.Log("Pump!" + timer);
+            
+            hitani.Play("pump", -1 ,0f);
             // Allow hits
             timer = 0f;
             overflow = true;
@@ -67,6 +73,8 @@ public class FRController : MonoBehaviour
             streak++;
             // UI.info streak /30
             Debug.Log("Hit!");
+            uimanager.setInfoText(streak + "/30");
+
         }
         else
         {
