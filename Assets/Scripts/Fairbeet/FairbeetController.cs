@@ -29,6 +29,7 @@ public class FairbeetController :  ILevelController
     public int exitState = 3;
     public int weedCount = 0;
     public bool weedInteraction =  false;
+    public bool bicycleGo = false;
     private static FairbeetController instance;
 
     public static FairbeetController Instance()
@@ -69,6 +70,7 @@ public class FairbeetController :  ILevelController
             
             nextState();
             // state = 3
+            // Bicycle go 
         }
     }
 
@@ -80,8 +82,9 @@ public class FairbeetController :  ILevelController
         if(state == 4)
         {
             //TODO: Maybe load scene in GameManager, avoiding dupicates
-            SceneManager.LoadScene("General");
             GameManager.Instance().nextLevel();
+            SceneManager.LoadScene("General");
+           
 
         }
     }

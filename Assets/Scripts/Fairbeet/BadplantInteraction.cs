@@ -9,6 +9,7 @@ public class BadplantInteraction : MonoBehaviour, IInteractable
     public GameObject cameraShovel;
     public GameObject UI;
     public GameObject flower;
+    public GameObject bike;
     private UIManager uimanager;
     private CameraShovel camshov;
     //private FairbeetController fbcontroller;
@@ -37,9 +38,11 @@ public class BadplantInteraction : MonoBehaviour, IInteractable
 
         if (FairbeetController.Instance().weedCount == 0)
         {
-            uimanager.setInfoText("Toll! Beende das Level mit der Blume");
+            uimanager.setInfoText("Level geschafft! Dreh dich um");
+            bike.SetActive(true);
             flower.SetActive(true);
             cameraShovel.SetActive(false);
+
         }
         else
         {
