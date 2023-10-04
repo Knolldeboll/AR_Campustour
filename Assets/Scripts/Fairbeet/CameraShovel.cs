@@ -8,10 +8,12 @@ public class CameraShovel : MonoBehaviour
     // Start is called before the first frame update
 
     Animator anim;
-    
+    AudioSource audioSource;
+
     void Start()
     {
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -22,5 +24,8 @@ public class CameraShovel : MonoBehaviour
     public void dig()
     {
         anim.Play("spaten", -1, 0f);
+        audioSource.Play();
+        // Sound play
+
     }
 }

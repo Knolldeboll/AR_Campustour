@@ -22,7 +22,7 @@ public class GameManager
 
     // The currentLevel, level starts at 0
     private int currentLevel = 0;
-    private int levelCount = 2;
+    private int levelCount = 4;
 
 
 

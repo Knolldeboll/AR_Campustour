@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HomeController : MonoBehaviour, ILevelController
 {
@@ -13,10 +14,13 @@ public class HomeController : MonoBehaviour, ILevelController
     private int pid = 0;
     public int CurrentPickupID { get { return pid; } set { pid = value; } }
     public List<GameObject> fixables;
+    public Timer timer;
+    public UIManager ui;
+    private int maxState;
 
     private int state = 0;
-    private int maxState = 23;
     private bool haspick = false;
+
 
     // Pickup Objects
     // CameraObjects
@@ -24,29 +28,34 @@ public class HomeController : MonoBehaviour, ILevelController
 
     void Start()
     {
-
+        maxState = fixables.Count - 1;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (timer.isFinished())
+        {
+            GameManager.Instance().nextLevel();
+            SceneManager.LoadScene("General");
+        }
     }
     public void nextState()
     {
+        state++;
         // Called after successful fixable interaction (pickup is placed on the right spot)
         if (state > maxState)
         {
-            // TODO: Load general scene
-            // TODO: Update gamemanager values
 
+            timer.startTimer(6);
+            ui.setInfoText("Geschafft!");
             return;
         }
         fid++;
         haspick = false;
         enableNextFixable();
         pid = 0;
-        state++;
+ 
     }
 
     public void enableNextFixable()

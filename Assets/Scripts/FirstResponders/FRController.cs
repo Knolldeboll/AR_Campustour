@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+//using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FRController : MonoBehaviour
 {
@@ -11,11 +13,13 @@ public class FRController : MonoBehaviour
     public float pumpPeriod = 0.5769f;
     float overflowtimer = 0f;
     public float maxOverflow = 0.25f;
+    public int maxPumps = 30;
     bool revive = true;
     bool overflow = false;
     public GameObject ui;
     public GameObject hitbox;
     public GameObject human;
+    public Timer endTimer;
     private Animator hitani;
     private Animator humanani;
     private UIManager uimanager;
@@ -30,6 +34,10 @@ public class FRController : MonoBehaviour
         hitani = hitbox.GetComponent<Animator>();
         humanani = human.GetComponent <Animator>();
         uimanager = ui.GetComponent<UIManager>();
+       // timer.GetComponent<Timer>();
+
+
+
     }
 
     // Update is called once per frame
@@ -42,6 +50,12 @@ public class FRController : MonoBehaviour
         else
         {
 
+        }
+        if (endTimer.isFinished())
+        {
+            //
+            GameManager.Instance().nextLevel();
+            SceneManager.LoadScene("General");
         }
 
     }
@@ -97,12 +111,13 @@ public class FRController : MonoBehaviour
             streak++;
             // UI.info streak /30
             Debug.Log("Hit!");
-            uimanager.setInfoText(streak + "/30");
-            if(streak == 30)
+            uimanager.setInfoText(streak + "/" + maxPumps);
+            if (streak == maxPumps)
             {
                 hitbox.SetActive(false);
                 humanani.SetBool("getUp",true);
                 revive = false;
+                endTimer.startTimer(10);
                 uimanager.setInfoText("Geschafft! Das Fahrrad ist aber noch kaputt, auf zum H.O.M.E.");
             }
 
