@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fb67f7c7ff05a334abc269c01b73292f
+guid: ae053d8fba243334abc0d084ba4305fd
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 60, y: 130, z: 60, w: 79}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AR_wizard_4_0
+      name: AR_wizard_1_0
       rect:
         serializedVersion: 2
-        x: 67
-        y: 242
-        width: 258
-        height: 531
+        x: 121
+        y: 286
+        width: 150
+        height: 264
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59aa065a5699fa04c8104310a236cebd
-      internalID: 304502882
+      spriteID: a43d12c65842801458d79a338cea8a62
+      internalID: 1668544974
       vertices: []
       indices: 
       edges: []
@@ -141,14 +141,14 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      AR_wizard_4_0: 304502882
+      AR_wizard_1_0: 1668544974
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fb67f7c7ff05a334abc269c01b73292f
+guid: c9e0f9ed3db017545a2182a58d85ac57
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,12 +117,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AR_wizard_4_0
+      name: AR_wizard_2_0
       rect:
         serializedVersion: 2
-        x: 67
+        x: 86
         y: 242
-        width: 258
+        width: 220
         height: 531
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59aa065a5699fa04c8104310a236cebd
-      internalID: 304502882
+      spriteID: f13164c0fe31237449e52aed4191a67a
+      internalID: 1216869740
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      AR_wizard_4_0: 304502882
+      AR_wizard_2_0: 1216869740
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
