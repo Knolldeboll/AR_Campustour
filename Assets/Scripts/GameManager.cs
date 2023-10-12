@@ -119,4 +119,9 @@ public class GameManager
         return ret;
 
     }
+
+    public void restart()
+    {
+        currentLevel = 0;
+    }
 }

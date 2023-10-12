@@ -37,7 +37,7 @@ public class HomeController : MonoBehaviour, ILevelController
         if (timer.isFinished())
         {
             GameManager.Instance().nextLevel();
-            SceneManager.LoadScene("General");
+            SceneManager.LoadScene("End");
         }
     }
     public void nextState()
