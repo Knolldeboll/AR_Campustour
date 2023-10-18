@@ -84,14 +84,10 @@ public class Bike : MonoBehaviour, IInteractable
 
     */
 
-    /*
     public void interact(GameObject i)
     {
-
-
+        Debug.Log("BIKE GO");
         BikeMator.SetBool("Bikestart", true);
+
     }
-    */
-
-
 }

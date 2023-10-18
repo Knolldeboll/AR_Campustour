@@ -11,10 +11,20 @@ public class GeneralSceneController : MonoBehaviour, ILevelController
     public bool fairbeet = false;
     public bool fr = false;
     public bool home = false;
+    public GameObject notifyBlob;
+    private Animator blobAnimator;
+    //public image
 
     void Start()
     {
         
+
+        if(GameManager.Instance().getCurrentLevel() > 0)
+        {
+            // Play Notify Animation
+            notifyBlob.GetComponent<Animator>().SetTrigger("Notify");
+
+        }
         
     }
 

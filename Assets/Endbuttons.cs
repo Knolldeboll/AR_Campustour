@@ -19,9 +19,7 @@ public class Endbuttons : MonoBehaviour
 
     public void close()
     {
-        GameManager.Instance().nextLevel();
-        GameManager.Instance().nextLevel();
-        GameManager.Instance().nextLevel();
+        GameManager.Instance().setLevel(3);
         SceneManager.LoadScene("General");
         
     }

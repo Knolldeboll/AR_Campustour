@@ -879,7 +879,7 @@ Transform:
   m_GameObject: {fileID: 692828177}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0066707693, y: 0.6743324, z: -0.007167098, w: 0.7383631}
-  m_LocalPosition: {x: -5.633, y: 1.154, z: -0.721}
+  m_LocalPosition: {x: -5.633, y: 0, z: -0.721}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1161,7 +1161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pumpPeriod: 0.5769
   maxOverflow: 1
-  maxPumps: 2
+  maxPumps: 30
   ui: {fileID: 1534555734}
   hitbox: {fileID: 877463782}
   human: {fileID: 1775024741522364585}
@@ -2207,12 +2207,19 @@ MonoBehaviour:
   - {fileID: 448068887}
   - {fileID: 1167524840}
   - {fileID: 1784163432}
+  progressBars:
+  - {fileID: 1756475807}
+  - {fileID: 1092477182}
+  - {fileID: 104067976}
   debugtext: {fileID: 828788497}
   infofield: {fileID: 581931602}
   infotext: {fileID: 1713875029}
   locationtext: {fileID: 1023855774}
   greenMarker: {fileID: 21300000, guid: 03fd587359859ed478caeeecae08355c, type: 3}
   redMarker: {fileID: 21300000, guid: 7ceff34be368ce6448c4fb5a6499d3ba, type: 3}
+  redProgress: {fileID: 21300000, guid: b75725959074e9b41a778b9fc50796ac, type: 3}
+  greenProgress: {fileID: 21300000, guid: a807325e93e092f41b21ea61c04a3c6a, type: 3}
+  grayProgress: {fileID: 21300000, guid: 09f59b9215c25f84cb4880a69ff77e1e, type: 3}
 --- !u!114 &1534555736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2425,7 +2432,7 @@ MonoBehaviour:
   mAspectRatio: 0.6933334
   mImageTargetType: 3
   mWidth: 0.56
-  mHeight: 0.38826668
+  mHeight: 0.3882667
   mRuntimeTexture: {fileID: 2800000, guid: daf3de81db29063429c383d3d41cba12, type: 3}
   mMotionHint: 1
   mTrackingOptimization: 0
@@ -2440,11 +2447,10 @@ Transform:
   m_GameObject: {fileID: 1592917217}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0, y: 0.953, z: 0}
+  m_LocalPosition: {x: 0, y: 1.193, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1434949765636293139}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
 --- !u!114 &1592917223
@@ -3767,16 +3773,16 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1775024741522364585}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: -0.7071068}
-  m_LocalPosition: {x: 1.047, y: 1.867, z: -0.953}
-  m_LocalScale: {x: 0.009000001, y: 0.009, z: 0.009000001}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0.7071068, w: 0}
+  m_LocalPosition: {x: -1.052, y: 0, z: -0.153}
+  m_LocalScale: {x: 0.009000007, y: 0.009000003, z: 0.009000003}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1678660858}
   - {fileID: 877463783}
   - {fileID: 8615415706399735217}
   - {fileID: 583808605077491196}
-  m_Father: {fileID: 1592917222}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: -180, z: 0}
 --- !u!1 &1480033200771625876
 GameObject:
@@ -3990,4 +3996,5 @@ SceneRoots:
   - {fileID: 775150102}
   - {fileID: 1973750157}
   - {fileID: 609994180}
+  - {fileID: 1434949765636293139}
   - {fileID: 1592917222}

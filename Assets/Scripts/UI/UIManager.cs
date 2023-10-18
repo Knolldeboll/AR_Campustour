@@ -10,12 +10,19 @@ public class UIManager : MonoBehaviour
 {
     // public GameObject mapImage;
     public List<GameObject> mapMarkers;
+    public List<GameObject> progressBars;
     public GameObject debugtext;
     public GameObject infofield;
     public GameObject infotext;
     public GameObject locationtext;
     public Sprite greenMarker;
     public Sprite redMarker;
+    public Sprite redProgress;
+    public Sprite greenProgress;
+    public Sprite grayProgress;
+    private Color32 green = new Color32(171,230,80,255);
+    private Color32 red = new Color32(245,103,80,255);
+    private Color32 gray = new Color32(228,228,228,255);
     private TMP_Text tmp_info;
     private TMP_Text tmp_debug;
     private TMP_Text tmp_location;
@@ -58,6 +65,52 @@ public class UIManager : MonoBehaviour
                 mapMarkers[i].GetComponent<Image>().sprite = redMarker;
             }
 
+        }
+
+        switch (level)
+        {
+            case 0:
+                // 1 red 2 grey 3 grey
+                // TMP Colors ? 
+                progressBars[0].GetComponent<Image>().sprite = redProgress;
+                progressBars[0].GetComponentInChildren<TMP_Text>().color = red;
+
+                progressBars[1].GetComponent<Image>().sprite = grayProgress;
+                progressBars[1].GetComponentInChildren<TMP_Text>().color = gray;
+
+               progressBars[2].GetComponent<Image>().sprite = grayProgress;
+                progressBars[2].GetComponentInChildren<TMP_Text>().color = gray;
+
+
+                break;
+            case 1:
+
+                progressBars[0].GetComponent<Image>().sprite = greenProgress;
+                progressBars[0].GetComponentInChildren<TMP_Text>().color = green;
+                progressBars[1].GetComponent<Image>().sprite = redProgress;
+                progressBars[1].GetComponentInChildren<TMP_Text>().color = red;
+                progressBars[2].GetComponent<Image>().sprite = grayProgress;
+                progressBars[2].GetComponentInChildren<TMP_Text>().color = gray;
+                // 1 green, 2 red
+
+                break;
+            case 2:
+
+                progressBars[0].GetComponent<Image>().sprite = greenProgress;
+                progressBars[0].GetComponentInChildren<TMP_Text>().color = green;
+               progressBars[1].GetComponent<Image>().sprite = greenProgress;
+                progressBars[1].GetComponentInChildren<TMP_Text>().color = green;
+               progressBars[2].GetComponent<Image>().sprite = redProgress;
+                progressBars[2].GetComponentInChildren<TMP_Text>().color = red;
+                break;
+            case 3:
+                progressBars[0].GetComponent<Image>().sprite = greenProgress;
+                progressBars[0].GetComponentInChildren<TMP_Text>().color = green;
+               progressBars[1].GetComponent<Image>().sprite = greenProgress;
+                progressBars[1].GetComponentInChildren<TMP_Text>().color = green;
+               progressBars[2].GetComponent<Image>().sprite = greenProgress;
+                progressBars[2].GetComponentInChildren<TMP_Text>().color = green;
+                break;
         }
     }
 

@@ -82,7 +82,7 @@ public class FairbeetController :  ILevelController
         if(state == 4)
         {
             //TODO: Maybe load scene in GameManager, avoiding dupicates
-            GameManager.Instance().nextLevel();
+            GameManager.Instance().setLevel(1);
             SceneManager.LoadScene("General");
            
 

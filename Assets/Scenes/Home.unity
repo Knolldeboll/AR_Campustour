@@ -225,8 +225,7 @@ Transform:
   m_LocalPosition: {x: -0.39, y: 1.62, z: 0.005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2050952405}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!114 &53338236
@@ -238,7 +237,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 53338231}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 53338234}
@@ -1133,12 +1132,19 @@ MonoBehaviour:
   - {fileID: 2048769773}
   - {fileID: 2024311171}
   - {fileID: 1482544617}
+  progressBars:
+  - {fileID: 1850373704}
+  - {fileID: 2074535653}
+  - {fileID: 1887065950}
   debugtext: {fileID: 1881212999}
   infofield: {fileID: 505281134}
   infotext: {fileID: 1194192685}
   locationtext: {fileID: 1764457223}
   greenMarker: {fileID: 21300000, guid: 03fd587359859ed478caeeecae08355c, type: 3}
   redMarker: {fileID: 21300000, guid: 7ceff34be368ce6448c4fb5a6499d3ba, type: 3}
+  redProgress: {fileID: 21300000, guid: b75725959074e9b41a778b9fc50796ac, type: 3}
+  greenProgress: {fileID: 21300000, guid: a807325e93e092f41b21ea61c04a3c6a, type: 3}
+  grayProgress: {fileID: 21300000, guid: 09f59b9215c25f84cb4880a69ff77e1e, type: 3}
 --- !u!114 &937112081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5128,14 +5134,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2050952404}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.125, z: 0}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -0.39, y: 1.62, z: 0.13000001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8316258296264912845}
   - {fileID: 1843603268}
-  m_Father: {fileID: 53338235}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2074535653
 GameObject:
@@ -6574,5 +6580,6 @@ SceneRoots:
   - {fileID: 937112084}
   - {fileID: 1065266603}
   - {fileID: 1027325502}
+  - {fileID: 2050952405}
   - {fileID: 53338235}
   - {fileID: 251846892}

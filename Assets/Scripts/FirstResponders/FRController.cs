@@ -54,7 +54,7 @@ public class FRController : MonoBehaviour
         if (endTimer.isFinished())
         {
             //
-            GameManager.Instance().nextLevel();
+            GameManager.Instance().setLevel(2);
             SceneManager.LoadScene("General");
         }
 

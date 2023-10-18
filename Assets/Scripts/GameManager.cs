@@ -66,34 +66,12 @@ public class GameManager
 
 
     }
-    public void nextLevel()
+
+
+    public void setLevel(int level)
     {
-        // 
-        
-        
-        currentLevel++;
-
-        if(currentLevel > levelCount)
-        {
-            // Maybe restart/main menu etc. ? 
-            return;
-        }
-        switch (currentLevel)
-        {
-            case 1:
-                // Do nothing?
-                break;
-            case 2:
-               // SceneManager.LoadScene("Level2");
-                // Load scene, etc.  -> geht hier (no monobehaviour!) loadscene ? 
-                // oder soll auf currrentlevel ein extra manager zugreifen, der dann die neuen scenes lädt,
-                // Map updates in eigenem mapmanager, der currentlevel abcheckt ? 
-
-                // Maybe reset current Targets, so that the targets from the old level are not known here
-                break;
-        }
+        currentLevel = level;
     }
-
 
     public int getCurrentLevel()
     {
@@ -101,8 +79,6 @@ public class GameManager
     }
 
    
-
-
     public string targetsToText()
     {
 
