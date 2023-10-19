@@ -64,4 +64,11 @@ public class GeneralSceneController : MonoBehaviour, ILevelController
         if (GameManager.Instance().getCurrentLevel() != 2) return;
         SceneManager.LoadScene("Home");
     }
+
+    public void devSetLevel(int level)
+    {
+        GameManager.Instance().setLevel(level);
+        SceneManager.LoadScene("General");
+
+    }
 }

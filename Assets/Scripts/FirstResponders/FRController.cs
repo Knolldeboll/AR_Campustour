@@ -14,6 +14,7 @@ public class FRController : MonoBehaviour
     float overflowtimer = 0f;
     public float maxOverflow = 0.25f;
     public int maxPumps = 30;
+    public bool started = false;
     bool revive = true;
     bool overflow = false;
     public GameObject ui;
@@ -32,9 +33,9 @@ public class FRController : MonoBehaviour
     {
 
         hitani = hitbox.GetComponent<Animator>();
-        humanani = human.GetComponent <Animator>();
+        humanani = human.GetComponent<Animator>();
         uimanager = ui.GetComponent<UIManager>();
-       // timer.GetComponent<Timer>();
+        // timer.GetComponent<Timer>();
 
 
 
@@ -87,12 +88,12 @@ public class FRController : MonoBehaviour
                 overflowtimer = 0f;
                 streak = 0;
                 // UI.info 0 /30
-                uimanager.setInfoText("0/30");
-                Debug.Log("Fail!");
+                if (started)
+                {
+                    uimanager.setInfoText("0/30");
+                }
             }
-
         }
-
     }
 
     // Called when touching the hitbox
@@ -115,12 +116,11 @@ public class FRController : MonoBehaviour
             if (streak == maxPumps)
             {
                 hitbox.SetActive(false);
-                humanani.SetBool("getUp",true);
+                humanani.SetBool("getUp", true);
                 revive = false;
                 endTimer.startTimer(10);
                 uimanager.setInfoText("Geschafft! Das Fahrrad ist aber noch kaputt, auf zum H.O.M.E.");
             }
-
         }
         else
         {
@@ -130,5 +130,4 @@ public class FRController : MonoBehaviour
             Debug.Log("Fail!");
         }
     }
-
 }

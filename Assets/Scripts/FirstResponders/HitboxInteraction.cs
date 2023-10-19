@@ -19,6 +19,10 @@ public class HitboxInteraction : MonoBehaviour, IInteractable
     }
     public void interact(GameObject o)
     {
+        if (!levelcontroller.started)
+        {
+            levelcontroller.started = true;
+        }
         levelcontroller.pump();
     }
 }
