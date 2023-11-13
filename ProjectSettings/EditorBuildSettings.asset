@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Wizard.unity
     guid: 37416d62d89685a45afb9a1f298d853d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/General.unity
     guid: 7c2a11b136bddb844a0afb3a744b2e2a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Fairbeet.unity
     guid: 5ceb4a42f10ff8944b18464478a83807
   - enabled: 0
@@ -20,14 +20,17 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FirstResponders.unity
     guid: 4894ec57d7d8db843b3889959969945b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Home.unity
     guid: 50f49f0f9a817304c93a0b51ffb536a8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/End.unity
     guid: c61fa189ba9782c409d6e447dfc44a31
+  - enabled: 1
+    path: Assets/Scenes/ARacer.unity
+    guid: 4aafbea9a41cd634ea315cf265e3ae20
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 55ea2c6be9be8454a845f24ac6b5a86d, type: 2}

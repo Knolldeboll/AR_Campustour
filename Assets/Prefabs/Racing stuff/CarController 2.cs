@@ -12,28 +12,35 @@ public class CarController2 : MonoBehaviour
     public float maxReverseSpeed = 3f;  // Maximum backward speed
     public float steeringSpeed = 2f;
 
+
     private float currentSpeed = 0f;
+    private float accelerationInput = 0f;
+    private float steeringInput = 0f;
 
     private void Update()
     {
-        // Get user input for acceleration, braking, and steering
-        float accelerationInput = Input.GetAxis("Vertical");
-        float steeringInput = Input.GetAxis("Horizontal");
+        // Keyboard input
+        //  float accelerationInput = Input.GetAxis("Vertical");
+        // float steeringInput = Input.GetAxis("Horizontal");
 
-        // Apply acceleration
+        // Button input 
+       // accelerationInput = getAcceleration();
+       // steeringInput = getSteering();
+
+        // Accelerate
         if (accelerationInput > 0)
         {
             // Min, so that if currentstpeed accelerates over maxspeed, speed is set to maxspeed instead
             currentSpeed = Mathf.Min(currentSpeed + acceleration * Time.deltaTime, maxSpeed);
         }
-        // Apply deceleration when not accelerating
+        // Decelerate
         else if (accelerationInput == 0)
         {
             // do not go lower as 0 when letting go
             currentSpeed = Mathf.Max(currentSpeed - deceleration * Time.deltaTime, 0f);
         }
 
-        // Apply braking or move backward when the "back" button is pressed
+        // Braking/ backwards
         if (accelerationInput < 0)
         {
             if (currentSpeed > 0)
@@ -50,7 +57,7 @@ public class CarController2 : MonoBehaviour
             }
         }
 
-        // Apply force for acceleration, braking, and backward movement
+        
         carRigidbody.velocity = currentSpeed * carBody.forward;
 
         // Apply steering
@@ -61,6 +68,51 @@ public class CarController2 : MonoBehaviour
             carRigidbody.rotation *= Quaternion.Euler(0f, rotation, 0f);
         }
     }
+
+    public float getAcceleration()
+    {
+        // Wrong buttons!
+        // TODO: UI Button script which sets axis values on pointerevent
+        // accelerationInput = value;
+        if (Input.GetButtonDown("fwd"))
+        {
+            return 1f;
+        }else if (Input.GetButtonDown("back"))
+        {
+            return -1f;
+        }
+        else
+        {
+            Debug.Log("noacc");
+            return 0f;
+        }
+    }
+    public float getSteering()
+    {
+        if (Input.GetButton("left"))
+        {
+            return -1f;
+        }else if (Input.GetButtonDown("right"))
+        {
+            return 1f;
+        }else
+        {
+            Debug.Log("nosteer");
+            return 0f;
+        }
+    }
+
+    public void accelerate(float value)
+    {
+        accelerationInput = value;
+    }
+
+    public void steer(float value)
+    {
+        // TODO: Steering does not work ...
+        steeringInput = value;
+    }
+
 }
 
 
