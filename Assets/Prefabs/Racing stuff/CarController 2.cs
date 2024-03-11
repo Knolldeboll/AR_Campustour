@@ -13,6 +13,7 @@ public class CarController2 : MonoBehaviour
     public float steeringSpeed = 2f;
 
 
+    // Wird aktuell direkt von den Buttons gesetzt!
     private float currentSpeed = 0f;
     private float accelerationInput = 0f;
     private float steeringInput = 0f;
@@ -20,12 +21,13 @@ public class CarController2 : MonoBehaviour
     private void Update()
     {
         // Keyboard input
-        //  float accelerationInput = Input.GetAxis("Vertical");
-        // float steeringInput = Input.GetAxis("Horizontal");
+        float accelerationInput = Input.GetAxis("Vertical");
+        // TODO: Bei Rückwärs invertieren!
+        float steeringInput = Input.GetAxis("Horizontal");
 
-        // Button input 
-       // accelerationInput = getAcceleration();
-       // steeringInput = getSteering();
+        // Button input - überholt!
+        // accelerationInput = getAcceleration();
+        // steeringInput = getSteering();
 
         // Accelerate
         if (accelerationInput > 0)
@@ -54,10 +56,12 @@ public class CarController2 : MonoBehaviour
             {
                 // Move backward, but not as fast as it can forward
                 currentSpeed = Mathf.Max(currentSpeed - acceleration * Time.deltaTime, -maxReverseSpeed);
+                // Invert steering when driving backwards
+                steeringInput = -steeringInput;
             }
         }
 
-        
+
         carRigidbody.velocity = currentSpeed * carBody.forward;
 
         // Apply steering
@@ -77,7 +81,8 @@ public class CarController2 : MonoBehaviour
         if (Input.GetButtonDown("fwd"))
         {
             return 1f;
-        }else if (Input.GetButtonDown("back"))
+        }
+        else if (Input.GetButtonDown("back"))
         {
             return -1f;
         }
@@ -92,10 +97,12 @@ public class CarController2 : MonoBehaviour
         if (Input.GetButton("left"))
         {
             return -1f;
-        }else if (Input.GetButtonDown("right"))
+        }
+        else if (Input.GetButtonDown("right"))
         {
             return 1f;
-        }else
+        }
+        else
         {
             Debug.Log("nosteer");
             return 0f;
@@ -113,7 +120,30 @@ public class CarController2 : MonoBehaviour
         steeringInput = value;
     }
 
+    void OnCollisionEnter3D(Collision collision)
+    {
+        Debug.Log("Collide enter");
+
+        if (collision.gameObject.tag == "Wall")
+        {
+            Debug.Log("Wall");
+            carRigidbody.constraints = RigidbodyConstraints.FreezeRotation;
+        }
+
+    }
+
+    void OnCollisionExit3D(Collision collision)
+    {
+        Debug.Log("Collide exit");
+        if (collision.gameObject.tag == "Wall")
+        {
+            Debug.Log("Wall");
+            carRigidbody.constraints = RigidbodyConstraints.None | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+        }
+    }
+
 }
+
 
 
 /*
