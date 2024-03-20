@@ -1,3 +1,5 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CarController2 : MonoBehaviour
@@ -6,6 +8,9 @@ public class CarController2 : MonoBehaviour
     public Transform carBody;
 
     public float maxSpeed = 10f;
+    public float wallSpeedReductionFactor = 0.5f;
+    private float currentMaxSpeed = 10f;
+    private float halfMaxSpeed = 5f;
     public float acceleration = 5f;
     public float deceleration = 2f;
     public float brakingForce = 10f;  // Adjust this value for braking
@@ -18,14 +23,23 @@ public class CarController2 : MonoBehaviour
     private float accelerationInput = 0f;
     private float steeringInput = 0f;
 
+
+    private void Start()
+    {
+        currentMaxSpeed = maxSpeed;
+        halfMaxSpeed = currentMaxSpeed *wallSpeedReductionFactor;
+        Debug.Log("Max speed: " + currentMaxSpeed + ", half max Speed: " + halfMaxSpeed + "current max speed: " + currentMaxSpeed); 
+    }
     private void Update()
     {
+
+
         // Keyboard input
         float accelerationInput = Input.GetAxis("Vertical");
         // TODO: Bei Rückwärs invertieren!
         float steeringInput = Input.GetAxis("Horizontal");
 
-        // Button input - überholt!
+        // UI Button input - überholt!
         // accelerationInput = getAcceleration();
         // steeringInput = getSteering();
 
@@ -33,7 +47,7 @@ public class CarController2 : MonoBehaviour
         if (accelerationInput > 0)
         {
             // Min, so that if currentstpeed accelerates over maxspeed, speed is set to maxspeed instead
-            currentSpeed = Mathf.Min(currentSpeed + acceleration * Time.deltaTime, maxSpeed);
+            currentSpeed = Mathf.Min(currentSpeed + acceleration * Time.deltaTime, currentMaxSpeed);
         }
         // Decelerate
         else if (accelerationInput == 0)
@@ -64,12 +78,16 @@ public class CarController2 : MonoBehaviour
 
         carRigidbody.velocity = currentSpeed * carBody.forward;
 
-        // Apply steering
+        // Apply steering if input is there
+        // TODO: Maybe if steering 0, ensure that the rotation does not change! (set to prev rotation?) 
         if (currentSpeed != 0f)
         {
-            float rotation = steeringInput * steeringSpeed;
-            // float rotation = steeringInput * (currentSpeed > 0 ? 1 : -1) * steeringSpeed;
-            carRigidbody.rotation *= Quaternion.Euler(0f, rotation, 0f);
+            if (steeringInput != 0)
+            {
+                float rotation = steeringInput * steeringSpeed;
+                carRigidbody.rotation *= Quaternion.Euler(0f, rotation, 0f);
+            }
+
         }
     }
 
@@ -120,24 +138,31 @@ public class CarController2 : MonoBehaviour
         steeringInput = value;
     }
 
-    void OnCollisionEnter3D(Collision collision)
+
+    // TODO: When at wall, ignore acceleration! No wall speed buildup allowed
+    // Or better: temporarily set maxspeed lower
+    void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Collide enter");
 
         if (collision.gameObject.tag == "Wall")
         {
-            Debug.Log("Wall");
-            carRigidbody.constraints = RigidbodyConstraints.FreezeRotation;
+            currentMaxSpeed = halfMaxSpeed;
+            // carRigidbody.constraints = RigidbodyConstraints.FreezeRotation;
         }
 
     }
 
-    void OnCollisionExit3D(Collision collision)
+    void OnCollisionExit(Collision collision)
     {
         Debug.Log("Collide exit");
         if (collision.gameObject.tag == "Wall")
         {
-            Debug.Log("Wall");
+            currentMaxSpeed = maxSpeed;
+
+            // Resetting the "spin" after leaving wall by freezing and unfreezing rotation
+            Debug.Log("Unspin!");
+            carRigidbody.constraints = RigidbodyConstraints.FreezeRotation;
             carRigidbody.constraints = RigidbodyConstraints.None | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
         }
     }
