@@ -1,9 +1,12 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CarController2 : MonoBehaviour
 {
+
+    //TODO: Use PlayerInput Mapping to control speed/steering
     public Rigidbody carRigidbody;
     public Transform carBody;
 
@@ -23,7 +26,7 @@ public class CarController2 : MonoBehaviour
     private float accelerationInput = 0f;
     private float steeringInput = 0f;
 
-
+    
     private void Start()
     {
         currentMaxSpeed = maxSpeed;
@@ -34,11 +37,14 @@ public class CarController2 : MonoBehaviour
     {
 
 
+        //TODO: Replace with getting steering input from on-screen-buttons
         // Keyboard input
-        float accelerationInput = Input.GetAxis("Vertical");
+       // float accelerationInput = Input.GetAxis("Vertical");
+    
         // TODO: Bei Rückwärs invertieren!
-        float steeringInput = Input.GetAxis("Horizontal");
+       // float steeringInput = Input.GetAxis("Horizontal");
 
+        //Debug.Log("Input: Vertical " + accelerationInput + " Horizontal " + steeringInput);
         // UI Button input - überholt!
         // accelerationInput = getAcceleration();
         // steeringInput = getSteering();
@@ -91,6 +97,30 @@ public class CarController2 : MonoBehaviour
         }
     }
 
+
+// Wird auch wieder auf 0 gesetzt wenn der Button losgelassen wird. 
+// Achtung: Wenn z.B. gleichzeitig links und Rechts gedrückt wird, 
+//wird überschrieben (z.B. erst 1, dann -1, dann rechts loslassen = 0 auch wenn links noch gedrückt!)
+
+public void OnForward(InputValue inputValue){
+
+accelerationInput = inputValue.Get<float>();
+
+
+}
+
+public void OnBackward(InputValue inputValue){
+accelerationInput = -inputValue.Get<float>();
+}
+
+public void OnLeft(InputValue inputValue){
+steeringInput = -inputValue.Get<float>();
+}
+
+public void OnRight(InputValue inputValue){
+steeringInput = inputValue.Get<float>();
+}
+/*
     public float getAcceleration()
     {
         // Wrong buttons!
@@ -110,6 +140,10 @@ public class CarController2 : MonoBehaviour
             return 0f;
         }
     }
+
+    */
+
+    /*
     public float getSteering()
     {
         if (Input.GetButton("left"))
@@ -126,7 +160,7 @@ public class CarController2 : MonoBehaviour
             return 0f;
         }
     }
-
+*/
     public void accelerate(float value)
     {
         accelerationInput = value;
